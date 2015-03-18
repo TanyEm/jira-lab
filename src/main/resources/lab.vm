@@ -1,0 +1,67 @@
+<html>
+  <head>
+  	<title>Labaratory </title>
+  	<meta name="decorator" content="atl.admin">
+  	$webResourceManager.requireResource("com.atlassian.auiplugin:ajs")
+  	<style type="text/css">
+		 #tabs { 
+		    position:relative; 
+		} 
+		 
+		#tabs label { 
+		    width:180px; 
+		    display:block; 
+		    padding:10px; 
+		} 
+		 
+		#tabs label .title:hover { 
+		    cursor:pointer; 
+		} 
+		 
+		#tabs input[type=radio] { 
+		    display:none; 
+		} 
+		 
+		#tabs input[type=radio]:checked + label div { 
+		    display:block; 
+		} 
+		 
+		#tabs input[type=radio]:checked + label { 
+		    background:#f55; 
+		} 
+		 
+		#tabs input[type=radio]:checked + label .title { 
+		    color:#fff; 
+		} 
+		 
+		.tab_content { 
+		    display:none; 
+		    width:600px; 
+		    position:absolute; 
+		    top:0; 
+		    left:220px; 
+		}
+  	</style>
+  </head>
+  <body>
+		<div id="tabs"> 
+	    <input id="tab_1" type="radio" name="tab" value="" checked="checked"> 
+		    <label for="tab_1"> 
+		        <span class="title">A</span> 
+		        <div class="tab_content">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div> 
+		    </label> 
+		              
+		    <input id="tab_2" type="radio" name="tab" value=""> 
+		    <label for="tab_2"> 
+		        <span class="title">B</span> 
+		        <div class="tab_content">tabl</div> 
+		    </label> 
+		              
+		    <input id="tab_3" type="radio" name="tab" value=""> 
+		    <label for="tab_3"> 
+		        <span class="title">C</span> 
+		        <div class="tab_content">ccccccccccccccccc</div> 
+		    </label> 
+		</div>
+	</body>
+</html>

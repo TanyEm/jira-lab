@@ -1,0 +1,3 @@
+target/*
+!target/jira-lab-1.0.jar
+!target/jira-lab-1.0-tests.jar
