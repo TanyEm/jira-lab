@@ -58,7 +58,19 @@
 		    <label for="tab_2"> 
 		        <span class="title">B</span> 
 		        <div class="tab_content">
-		        	<p>2 tab</p>
+		        	<form id="admin" class="aui">
+					  <div class="field-group">
+					    <label for="name">Name:</label>
+					    <input type="text" id="name" name="name" class="text">
+					   </div>
+					   <div class="field-group">
+					     <label for="time">Time:</label>
+					     <input type="text" id="time" name="time" class="text">
+					   </div>
+					   <div class="field-group">
+					     <input type="submit" value="Save" class="button">
+					   </div>
+					</form>
 		        </div> 
 		    </label> 
 		              
