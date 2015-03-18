@@ -4,83 +4,46 @@
   	<meta charset="utf-8">
   	<meta name="decorator" content="atl.admin">
   	$webResourceManager.requireResource("com.atlassian.auiplugin:ajs")
-  	<style type="text/css">
-		 #tabs { 
-		    position:relative; 
-		} 
-		 
-		#tabs label { 
-		    width:180px; 
-		    display:block; 
-		    padding:10px; 
-		} 
-		 
-		#tabs label .title:hover { 
-		    cursor:pointer; 
-		} 
-		 
-		#tabs input[type=radio] { 
-		    display:none; 
-		} 
-		 
-		#tabs input[type=radio]:checked + label div { 
-		    display:block; 
-		} 
-		 
-		#tabs input[type=radio]:checked + label { 
-		    background:#f55; 
-		} 
-		 
-		#tabs input[type=radio]:checked + label .title { 
-		    color:#fff; 
-		} 
-		 
-		.tab_content { 
-		    display:none; 
-		    width:600px; 
-		    position:absolute; 
-		    top:0; 
-		    left:220px; 
-		}
-  	</style>
+  	
   </head>
   <body>
-		<div id="tabs"> 
-	    <input id="tab_1" type="radio" name="tab" value="" checked="checked"> 
-		    <label for="tab_1"> 
-		        <span class="title">A</span> 
-		        <div class="tab_content">
-		        	<p>1 tab</p>
-		        </div> 
-		    </label> 
-		              
-		    <input id="tab_2" type="radio" name="tab" value=""> 
-		    <label for="tab_2"> 
-		        <span class="title">B</span> 
-		        <div class="tab_content">
-		        	<form id="admin" class="aui">
+		
+		<div class="aui-tabs vertical-tabs" role="application">
+	    <ul class="tabs-menu" role="tablist">
+	        <li class="menu-item active-tab" role="presentation">
+	            <a href="#tabs-example-first" id="aui-uid-0-1426670166713" role="tab" aria-selected="true"><strong>A</strong></a>
+	        </li>
+	        <li class="menu-item" role="presentation">
+	            <a href="#tabs-example-second" id="aui-uid-1-1426670166713" role="tab" aria-selected="false"><strong>B</strong></a>
+	        </li>
+	        <li class="menu-item" role="presentation">
+	            <a href="#tabs-example-third" id="aui-uid-2-1426670166713" role="tab" aria-selected="false"><strong>C</strong></a>
+	        </li>
+	    </ul>
+	    <div class="tabs-pane active-pane" id="tabs-example-first" role="tabpanel" aria-hidden="false">
+	        <h2>1 tab</h2>
+	        <p>Some text</p>
+	    </div>
+	    <div class="tabs-pane" id="tabs-example-second" role="tabpanel" aria-hidden="true">
+	     <h2>2 tab</h2>
+			<form id="admin" class="aui">
 					  <div class="field-group">
-					    <label for="name">Name:</label>
-					    <input type="text" id="name" name="name" class="text">
+					    <label for="name">String:</label>
+					    <input type="text" id="string" name="string" class="text" required="required" autofocus>
 					   </div>
 					   <div class="field-group">
-					     <label for="time">Time:</label>
-					     <input type="text" id="time" name="time" class="text">
+					     <label for="time">Date:</label>
+					     <input type="text" id="date" name="date" class="text" required="required">
 					   </div>
 					   <div class="field-group">
 					     <input type="submit" value="Save" class="button">
 					   </div>
-					</form>
-		        </div> 
-		    </label> 
-		              
-		    <input id="tab_3" type="radio" name="tab" value=""> 
-		    <label for="tab_3"> 
-		        <span class="title">C</span> 
-		        <div class="tab_content">
-					<p>3 tab</p>
-				</div> 
-		    </label> 
-		</div>
+					</form>	       
+	    </div>
+	    <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-hidden="true">
+	        <h2>3 tab</h2>
+	        <p>Some text</p>
+	    </div>
+	</div>
 	</body>
 </html>
