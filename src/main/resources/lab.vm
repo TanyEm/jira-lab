@@ -1,6 +1,7 @@
 <html>
   <head>
-  	<title>Labaratory </title>
+  	<title>Laboratory</title>
+  	<meta charset="utf-8">
   	<meta name="decorator" content="atl.admin">
   	$webResourceManager.requireResource("com.atlassian.auiplugin:ajs")
   	<style type="text/css">
@@ -48,19 +49,25 @@
 	    <input id="tab_1" type="radio" name="tab" value="" checked="checked"> 
 		    <label for="tab_1"> 
 		        <span class="title">A</span> 
-		        <div class="tab_content">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div> 
+		        <div class="tab_content">
+		        	<p>1 tab</p>
+		        </div> 
 		    </label> 
 		              
 		    <input id="tab_2" type="radio" name="tab" value=""> 
 		    <label for="tab_2"> 
 		        <span class="title">B</span> 
-		        <div class="tab_content">tabl</div> 
+		        <div class="tab_content">
+		        	<p>2 tab</p>
+		        </div> 
 		    </label> 
 		              
 		    <input id="tab_3" type="radio" name="tab" value=""> 
 		    <label for="tab_3"> 
 		        <span class="title">C</span> 
-		        <div class="tab_content">ccccccccccccccccc</div> 
+		        <div class="tab_content">
+					<p>3 tab</p>
+				</div> 
 		    </label> 
 		</div>
 	</body>
