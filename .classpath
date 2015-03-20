@@ -353,4 +353,48 @@
       <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/atlassian/templaterenderer/atlassian-template-renderer-api/1.1.1/atlassian-template-renderer-api-1.1.1-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/atlassian/activeobjects/activeobjects-plugin/0.20/activeobjects-plugin-0.20.jar" sourcepath="M2_REPO/com/atlassian/activeobjects/activeobjects-plugin/0.20/activeobjects-plugin-0.20-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/atlassian/activeobjects/activeobjects-plugin/0.20/activeobjects-plugin-0.20-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/net/java/dev/activeobjects/activeobjects/0.20/activeobjects-0.20.jar" sourcepath="M2_REPO/net/java/dev/activeobjects/activeobjects/0.20/activeobjects-0.20-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/net/java/dev/activeobjects/activeobjects/0.20/activeobjects-0.20-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/google/collections/google-collections/1.0/google-collections-1.0.jar" sourcepath="M2_REPO/com/google/collections/google-collections/1.0/google-collections-1.0-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/google/collections/google-collections/1.0/google-collections-1.0-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/atlassian/activeobjects/activeobjects-core/0.20/activeobjects-core-0.20.jar" sourcepath="M2_REPO/com/atlassian/activeobjects/activeobjects-core/0.20/activeobjects-core-0.20-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/atlassian/activeobjects/activeobjects-core/0.20/activeobjects-core-0.20-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/atlassian/activeobjects/activeobjects-spi/0.20/activeobjects-spi-0.20.jar" sourcepath="M2_REPO/com/atlassian/activeobjects/activeobjects-spi/0.20/activeobjects-spi-0.20-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/atlassian/activeobjects/activeobjects-spi/0.20/activeobjects-spi-0.20-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/com/atlassian/activeobjects/activeobjects-dbex/0.20/activeobjects-dbex-0.20.jar" sourcepath="M2_REPO/com/atlassian/activeobjects/activeobjects-dbex/0.20/activeobjects-dbex-0.20-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/com/atlassian/activeobjects/activeobjects-dbex/0.20/activeobjects-dbex-0.20-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/woodstox/woodstox-core-asl/4.1.0/woodstox-core-asl-4.1.0.jar" sourcepath="M2_REPO/org/codehaus/woodstox/woodstox-core-asl/4.1.0/woodstox-core-asl-4.1.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/woodstox/stax2-api/3.1.0/stax2-api-3.1.0.jar" sourcepath="M2_REPO/org/codehaus/woodstox/stax2-api/3.1.0/stax2-api-3.1.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-webmvc/2.5.6/spring-webmvc-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-webmvc/2.5.6/spring-webmvc-2.5.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Татьяна/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/2.5.6/spring-beans-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-beans/2.5.6/spring-beans-2.5.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/2.5.6/spring-core-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-core/2.5.6/spring-core-2.5.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/2.5.6/spring-context-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-context/2.5.6/spring-context-2.5.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" sourcepath="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/2.5.6/spring-context-support-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-context-support/2.5.6/spring-context-support-2.5.6-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/2.5.6/spring-web-2.5.6.jar" sourcepath="M2_REPO/org/springframework/spring-web/2.5.6/spring-web-2.5.6-sources.jar"/>
 </classpath>

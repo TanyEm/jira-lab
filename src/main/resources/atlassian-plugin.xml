@@ -36,6 +36,15 @@
     
     <component-import key="renderer" interface="com.atlassian.templaterenderer.velocity.one.six.VelocityTemplateRenderer" />
  
+ 	<ao key="ao-module">
+ 		<description>The module configuring the Active Objects service used by this plugin</description>
+ 		<entity>com.atlassian.plugins.lab.jiralab.LabAo</entity>
+     </ao>
+ 
+	<component-import key="ao" name="Active Objects service" interface="com.atlassian.activeobjects.external.ActiveObjects">
+    	<description>Component to access Active Objects functionality from the plugin</description>
+	</component-import>
+                                                	
 	<servlet key="admin-servlet" class="com.atlassian.plugins.lab.jiralab.LabServlet">
 	  <url-pattern>/jira/lab</url-pattern>
 	</servlet>

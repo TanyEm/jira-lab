@@ -66,7 +66,21 @@
 		  <version>1.1.1</version>
 		  <scope>provided</scope>
 		</dependency>
-
+		
+		<dependency>
+          <groupId>com.atlassian.activeobjects</groupId>
+          <artifactId>activeobjects-plugin</artifactId>
+          <version>0.20</version>
+          <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+          <groupId>com.google.collections</groupId>
+          <artifactId>google-collections</artifactId>
+          <version>1.0</version>
+          <scope>provided</scope>
+        </dependency>
+                                                                            		 
 		<!-- Uncomment to use TestKit in your project. Details at https://bitbucket.org/atlassian/jira-testkit -->
 		<!-- You can read more about TestKit at https://developer.atlassian.com/display/JIRADEV/Plugin+Tutorial+-+Smarter+integration+testing+with+TestKit -->
 		<!--

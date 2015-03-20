@@ -26,7 +26,23 @@
 	    </div>
 	    <div class="tabs-pane" id="tabs-example-second" role="tabpanel" aria-hidden="true">
 	     <h2>2 tab</h2>
-			<form id="admin" class="aui">
+	     	<table class="aui" id="basic">
+				<thead>
+					<tr>
+						<th>String</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+				#foreach($item in $Data)
+					<tr>
+						<td>$item.getString()</td>
+						<td>$item.getDate()</td>
+					</tr>
+				#end
+				</tbody>
+			</table>	
+			<form id="lab" class="aui" method="post">
 					  <div class="field-group">
 					    <label for="name">String:</label>
 					    <input type="text" id="string" name="string" class="text" required="required" autofocus>
@@ -38,9 +54,10 @@
 					   <div class="field-group">
 					     <input type="submit" value="Save" class="button">
 					   </div>
-					</form>	       
+			</form>
+					       
 	    </div>
-	    <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-hidden="true">
+	 <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-hidden="true">
 	        <h2>3 tab</h2>
 	        <p>Some text</p>
 	    </div>
