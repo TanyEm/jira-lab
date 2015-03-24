@@ -31,18 +31,17 @@ public class LabServlet extends HttpServlet
 	{
 		final ArrayList<LabAo> dataArray = new ArrayList<LabAo>();
 		Map<String, Object> context = Maps.newHashMap();
-//		renderer.render("lab.vm", response.getWriter());
 		ao.executeInTransaction(new TransactionCallback<Void>()
 		{
-	@Override
-    public Void doInTransaction()
-    {
-        for (LabAo labao : ao.find(LabAo.class)) // (2)
-        {
-        	dataArray.add(labao);
-        }
-        return null;
-    }
+			@Override
+		    public Void doInTransaction()
+		    {
+		        for (LabAo labao : ao.find(LabAo.class))
+		        {
+		        	dataArray.add(labao);
+		        }
+		        return null;
+		    }
 		});
 		context.put("Data", dataArray);
 		renderer.render("lab.vm", context, response.getWriter());
@@ -54,20 +53,21 @@ public class LabServlet extends HttpServlet
     {
         final String stringData = req.getParameter("string");
         final String dateData = req.getParameter("date");
+        
         ao.executeInTransaction(new TransactionCallback<LabAo>()
         {
-
-     @Override
-     public LabAo doInTransaction()
-     {
-    	 final LabAo labao = ao.create(LabAo.class);
-    	 labao.setString(stringData); 
-    	 labao.setDate(dateData);
-    	 labao.save();
-     return labao;
-     }
+		     @Override
+		     public LabAo doInTransaction()
+		     {
+		    	 final LabAo labao = ao.create(LabAo.class);
+		    	 labao.setString(stringData); 
+		    	 labao.setDate(dateData);
+		    	 labao.save();
+		     return labao;
+		     }
         });
 
         res.sendRedirect(req.getContextPath() + "/plugins/servlet/jira/lab");
     }
+
 }

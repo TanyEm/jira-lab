@@ -13,7 +13,7 @@
     <!-- add our web resources -->
     <web-resource key="jira-lab-resources" name="jira-lab Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
+        <dependency>com.atlassian.auiplugin:dialog2</dependency>
         <resource type="download" name="jira-lab.css" location="/css/jira-lab.css"/>
         <resource type="download" name="jira-lab.js" location="/js/jira-lab.js"/>
         <resource type="download" name="images/" location="/images"/>
@@ -37,7 +37,7 @@
     <component-import key="renderer" interface="com.atlassian.templaterenderer.velocity.one.six.VelocityTemplateRenderer" />
  
  	<ao key="ao-module">
- 		<description>The module configuring the Active Objects service used by this plugin</description>
+ 		<description>Saved data</description>
  		<entity>com.atlassian.plugins.lab.jiralab.LabAo</entity>
      </ao>
  

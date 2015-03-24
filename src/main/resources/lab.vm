@@ -4,7 +4,7 @@
   	<meta charset="utf-8">
   	<meta name="decorator" content="atl.admin">
   	$webResourceManager.requireResource("com.atlassian.auiplugin:ajs")
-  	
+  	$webResourceManager.requireResource("com.atlassian.auiplugin:dialog2")
   </head>
   <body>
 		
@@ -25,12 +25,14 @@
 	        <p>Some text</p>
 	    </div>
 	    <div class="tabs-pane" id="tabs-example-second" role="tabpanel" aria-hidden="true">
-	     <h2>2 tab</h2>
+	     <h2>2 tab </h2>
+	     <button id="add-button"> Add... </button>
 	     	<table class="aui" id="basic">
 				<thead>
 					<tr>
 						<th>String</th>
 						<th>Date</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,23 +40,13 @@
 					<tr>
 						<td>$item.getString()</td>
 						<td>$item.getDate()</td>
+						<td>
+							<button id="delete-button-$item.getID()"> Delete </button>
+						</td>
 					</tr>
 				#end
 				</tbody>
 			</table>	
-			<form id="lab" class="aui" method="post">
-					  <div class="field-group">
-					    <label for="name">String:</label>
-					    <input type="text" id="string" name="string" class="text" required="required" autofocus>
-					   </div>
-					   <div class="field-group">
-					     <label for="time">Date:</label>
-					     <input type="text" id="date" name="date" class="text" required="required">
-					   </div>
-					   <div class="field-group">
-					     <input type="submit" value="Save" class="button">
-					   </div>
-			</form>
 					       
 	    </div>
 	 <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-hidden="true">
@@ -62,5 +54,47 @@
 	        <p>Some text</p>
 	    </div>
 	</div>
+	<section role="dialog" id="demo-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
+	    <!-- Dialog header -->
+	    <header class="aui-dialog2-header">
+	        <!-- The dialog's title -->
+	        <h2 class="aui-dialog2-header-main">Input data...</h2>
+	        <!-- Close icon -->
+	        <a class="aui-dialog2-header-close">
+	            <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
+	        </a>
+	    </header>
+	    <!-- Main dialog content -->
+	    <div class="aui-dialog2-content">
+	        
+	        <form id="lab" class="aui" method="post">
+					  <div class="field-group">
+					    <label for="name">String:</label>
+					    <input type="text" id="string" name="string" class="text" required="required" autofocus>
+					   </div>
+					   <div class="field-group">
+					     <label for="time">Date:</label>
+					     <input class="aui-date-picker" id="demo-range-always" type="date" max="2016-01-01" min="2015-03-24" name="date" required="required">
+					   </div>
+					   <div class="field-group">
+					     <input type="submit" value="Save" class="button">
+					   </div>
+			</form>
+	        
+	    </div>
+	    <!-- Dialog footer -->
+	    <footer class="aui-dialog2-footer">
+	      
+	    </footer>
+	</section>
+	<script>
+	
+	AJS.$(document).ready(function() {
+	    AJS.$("#add-button").click(function() {
+	        AJS.dialog2("#demo-dialog").show();
+	        AJS.$('#demo-range-always').datePicker({'overrideBrowserDefault': true});
+	    });
+});
+	</script>
 	</body>
 </html>
