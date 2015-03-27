@@ -69,5 +69,25 @@ public class LabServlet extends HttpServlet
 
         res.sendRedirect(req.getContextPath() + "/plugins/servlet/jira/lab");
     }
+	
+	//DELETE
+		@Override
+		protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+	    {
+	        final int IdForDelete = Integer.parseInt(req.getParameter("id"));
+	        
+	        ao.executeInTransaction(new TransactionCallback<Void>()
+	        		{
+	        			@Override
+	        		    public Void doInTransaction()
+	        		    {
+	        		        LabAo DelData = ao.get(LabAo.class, IdForDelete);
+	        		        ao.delete(DelData);
+	        		        return null;
+	        		    }
+	        		});
+
+	        //res.sendRedirect(req.getContextPath() + "/plugins/servlet/jira/lab");
+	    }
 
 }

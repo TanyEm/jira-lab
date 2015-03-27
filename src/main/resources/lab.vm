@@ -41,7 +41,7 @@
 						<td>$item.getString()</td>
 						<td>$item.getDate()</td>
 						<td>
-							<button id="delete-button-$item.getID()"> Delete </button>
+							<button id="delete-button" onclick="delData($item.getID())"> Delete </button>
 						</td>
 					</tr>
 				#end
@@ -87,14 +87,16 @@
 	      
 	    </footer>
 	</section>
-	<script>
-	
-	AJS.$(document).ready(function() {
+	<script>			
+	AJS.$(document).ready(function(){	
+	    
 	    AJS.$("#add-button").click(function() {
 	        AJS.dialog2("#demo-dialog").show();
 	        AJS.$('#demo-range-always').datePicker({'overrideBrowserDefault': true});
 	    });
-});
+
+		
+	});
 	</script>
 	</body>
 </html>
