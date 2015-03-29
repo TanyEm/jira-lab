@@ -1,3 +1,4 @@
+
 function delData(delId){
 	
 	AJS.$.ajax({
@@ -7,10 +8,12 @@ function delData(delId){
 		dataType: "text",
 		success: function(data){
 			
+			
 			AJS.$('#row-data-'+delId).remove();
 		}
 	});
 }
+
 
 AJS.$(document).ready(function(){	
 	

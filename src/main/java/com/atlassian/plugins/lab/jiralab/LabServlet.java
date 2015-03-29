@@ -53,18 +53,23 @@ public class LabServlet extends HttpServlet
 	}
 
 	//POST
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
     {
         final String stringData = req.getParameter("string");
         final String dateData = req.getParameter("date");
         
+        
         if (stringData.isEmpty() || dateData.isEmpty()){
+        	
         	
         	res.getWriter().write("EMPTY");
         	
+        	
         	res.getWriter().close();
         } else {
+        	
         	
 	    	final LabAo labao = ao.create(LabAo.class);
 	        ao.executeInTransaction(new TransactionCallback<LabAo>()
@@ -72,6 +77,7 @@ public class LabServlet extends HttpServlet
 			     @Override
 			     public LabAo doInTransaction()
 			     {
+			    	 
 			    	 labao.setString(stringData); 
 			    	 labao.setDate(dateData);
 			    	 labao.save();
@@ -79,12 +85,16 @@ public class LabServlet extends HttpServlet
 			     }
 	        });
 	        
+	        
 	        String newElement = new String();
+	        
 	        
 	        newElement = "<tr id=\"row-data-"+labao.getID()+"\"><td>"+labao.getString()+"</td><td>"+labao.getDate()+"</td>";
 	        newElement += "<td><button id=\"delete-button\" onclick=\"delData("+labao.getID()+")\"> Delete </button></td></tr>";
 	        
+	        
 	        res.getWriter().write(newElement);
+	        
 	        
 	        res.getWriter().close();
         }
