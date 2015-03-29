@@ -14,8 +14,8 @@
     <web-resource key="jira-lab-resources" name="jira-lab Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         <dependency>com.atlassian.auiplugin:dialog2</dependency>
-        <resource type="download" name="jira-lab.css" location="/css/jira-lab.css"/>
-        <resource type="download" name="jira-lab.js" location="/js/jira-lab.js"/>
+        <resource type="download" name="jira-lab.css" location="css/jira-lab.css"/>
+        <resource type="download" name="jira-lab.js" location="js/jira-lab.js"/>
         <resource type="download" name="images/" location="/images"/>
 
         <context>jira-lab</context>

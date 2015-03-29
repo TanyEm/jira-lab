@@ -6,12 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.atlassian.sal.api.transaction.TransactionCallback;
 import com.atlassian.activeobjects.external.ActiveObjects;
+import com.atlassian.crowd.embedded.api.Query;
 import com.atlassian.templaterenderer.TemplateRenderer;
+
 import java.util.ArrayList;
 import java.util.Map;
+
 import static com.google.common.base.Preconditions.*;
+
 import com.google.common.collect.Maps;
 
 public class LabServlet extends HttpServlet
@@ -54,20 +59,35 @@ public class LabServlet extends HttpServlet
         final String stringData = req.getParameter("string");
         final String dateData = req.getParameter("date");
         
-        ao.executeInTransaction(new TransactionCallback<LabAo>()
-        {
-		     @Override
-		     public LabAo doInTransaction()
-		     {
-		    	 final LabAo labao = ao.create(LabAo.class);
-		    	 labao.setString(stringData); 
-		    	 labao.setDate(dateData);
-		    	 labao.save();
-		     return labao;
-		     }
-        });
-
-        res.sendRedirect(req.getContextPath() + "/plugins/servlet/jira/lab");
+        if (stringData.isEmpty() || dateData.isEmpty()){
+        	
+        	res.getWriter().write("EMPTY");
+        	
+        	res.getWriter().close();
+        } else {
+        	
+	    	final LabAo labao = ao.create(LabAo.class);
+	        ao.executeInTransaction(new TransactionCallback<LabAo>()
+	        {
+			     @Override
+			     public LabAo doInTransaction()
+			     {
+			    	 labao.setString(stringData); 
+			    	 labao.setDate(dateData);
+			    	 labao.save();
+			    	 return labao;
+			     }
+	        });
+	        
+	        String newElement = new String();
+	        
+	        newElement = "<tr id=\"row-data-"+labao.getID()+"\"><td>"+labao.getString()+"</td><td>"+labao.getDate()+"</td>";
+	        newElement += "<td><button id=\"delete-button\" onclick=\"delData("+labao.getID()+")\"> Delete </button></td></tr>";
+	        
+	        res.getWriter().write(newElement);
+	        
+	        res.getWriter().close();
+        }
     }
 	
 	//DELETE
@@ -86,8 +106,6 @@ public class LabServlet extends HttpServlet
 	        		        return null;
 	        		    }
 	        		});
-
-	        //res.sendRedirect(req.getContextPath() + "/plugins/servlet/jira/lab");
 	    }
 
 }

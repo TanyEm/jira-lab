@@ -5,6 +5,8 @@
   	<meta name="decorator" content="atl.admin">
   	$webResourceManager.requireResource("com.atlassian.auiplugin:ajs")
   	$webResourceManager.requireResource("com.atlassian.auiplugin:dialog2")
+  	<!--Подключаем внешние ресурсы, js и css-->
+  	$webResourceManager.requireResource("com.atlassian.plugins.lab.jira-lab:jira-lab-resources")
   </head>
   <body>
 		
@@ -35,9 +37,10 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-				<tbody>
+				<!-- Прописываем id для работы с jquery -->
+				<tbody id="table-body-with-data">
 				#foreach($item in $Data)
-					<tr>
+					<tr id="row-data-$item.getID()">
 						<td>$item.getString()</td>
 						<td>$item.getDate()</td>
 						<td>
@@ -54,7 +57,7 @@
 	        <p>Some text</p>
 	    </div>
 	</div>
-	<section role="dialog" id="demo-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
+	<section role="dialog" id="dialog-modal" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
 	    <!-- Dialog header -->
 	    <header class="aui-dialog2-header">
 	        <!-- The dialog's title -->
@@ -70,14 +73,14 @@
 	        <form id="lab" class="aui" method="post">
 					  <div class="field-group">
 					    <label for="name">String:</label>
-					    <input type="text" id="string" name="string" class="text" required="required" autofocus>
+					    <input type="text" id="string-to-send" name="string" class="text" required="required" autofocus>
 					   </div>
 					   <div class="field-group">
 					     <label for="time">Date:</label>
 					     <input class="aui-date-picker" id="demo-range-always" type="date" max="2016-01-01" min="2015-03-24" name="date" required="required">
 					   </div>
 					   <div class="field-group">
-					     <input type="submit" value="Save" class="button">
+					     <input id="send-data-button" type="button" value="Save" class="button">
 					   </div>
 			</form>
 	        
@@ -87,16 +90,5 @@
 	      
 	    </footer>
 	</section>
-	<script>			
-	AJS.$(document).ready(function(){	
-	    
-	    AJS.$("#add-button").click(function() {
-	        AJS.dialog2("#demo-dialog").show();
-	        AJS.$('#demo-range-always').datePicker({'overrideBrowserDefault': true});
-	    });
-
-		
-	});
-	</script>
 	</body>
 </html>
