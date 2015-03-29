@@ -2,7 +2,7 @@
 function delData(delId){
 	
 	AJS.$.ajax({
-		url:"/jira/plugins/servlet/jira/lab?id="+delId,
+		url:"?id="+delId,
 		async: false,
 		type: "DELETE",
 		dataType: "text",
@@ -24,7 +24,7 @@ AJS.$(document).ready(function(){
 	
 	AJS.$("#send-data-button").click(function(){
 		AJS.$.ajax({
-			url:"/jira/plugins/servlet/jira/lab",
+			url:"",
 			async: false,
 			type: "POST",
 			
